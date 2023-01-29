@@ -44,11 +44,18 @@ child: Scaffold(
               margin: EdgeInsets.only(top: 250.0, bottom: 30.0),
               padding: EdgeInsets.only(left: 30.0 ,right: 30.0),
               child: TextFormField(
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
+                 enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
                   ),
                   labelText: 'Username',
+                  labelStyle: TextStyle(color: Colors.white),
                   hintText: 'Enter Username',
+                  hintStyle: TextStyle(color: Colors.white),
                 ),
               ),
             ),
@@ -57,11 +64,19 @@ child: Scaffold(
             Container( // Password Textfield
               padding: EdgeInsets.only(left: 30.0 ,right: 30.0),
               child: TextFormField(
+                style: TextStyle(color: Colors.white),
                 obscureText: !_showPassword,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.2)),
+                  ),
                   labelText: 'Password',
+                  labelStyle: TextStyle(color: Colors.white),
                   hintText: 'Enter Password',
+                  hintStyle: TextStyle(color: Colors.white),
                   suffixIcon: GestureDetector(
                     child: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
                     onTap: (){
@@ -78,16 +93,16 @@ child: Scaffold(
                   onPressed: (){
                   },
                   child: Text('Forgot Password?',
-                  style: TextStyle( color: Colors.blue),),
+                  style: TextStyle( color: Color(0xff64d9e7))),
 
                 ),
             ),
-            Container(             // LogIn Button
+            Container(// LogIn Button
               margin: EdgeInsets.only(top: 20.0, bottom: 5.0),
               height: 50,
-              width: 250,
+              width: 350,
               decoration: BoxDecoration(
-                  color: Color(0xff267D98), borderRadius: BorderRadius.circular(10)),
+                  color: Color(0xff95E1E9).withOpacity(0.2), borderRadius: BorderRadius.circular(10)),
               child: TextButton(
                 onPressed: () {
                 },
@@ -109,9 +124,9 @@ child: Scaffold(
             Container( // SignUp Button
               margin: EdgeInsets.only(top: 20),
               height: 50,
-              width: 250,
+              width: 350,
               decoration: BoxDecoration(
-                  color: Color(0xff267D98), borderRadius: BorderRadius.circular(10)
+                  color: Color(0xff95E1E9).withOpacity(0.2), borderRadius: BorderRadius.circular(10)
               ),
               child: TextButton(
                 child: Text('SIGN UP',
