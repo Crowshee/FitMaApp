@@ -1,82 +1,128 @@
-import 'package:fitt_app/main.dart';
+
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
 
+
+  bool _showPassword = false;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey,
+    return Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(0xff0D3728),Color(0xff3D5E52)])),
 
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
       body: Center(
         child: Column(
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(top: 250.0),
               padding: EdgeInsets.only(left: 30.0 ,right: 30.0),
-              child: TextField(
+              child: TextFormField(
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
+                  ),
                   labelText: 'Email',
+                  labelStyle: TextStyle(color: Colors.white),
                   hintText: 'Enter Email',
+                  hintStyle: TextStyle(color: Colors.white),
                 ),
               ),
             ),
 
+
             Container(
               padding: EdgeInsets.only(left: 30.0 ,right: 30.0, top: 20.0, bottom: 5.0),
-              child: TextField(
+              child: TextFormField(
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
+                  ),
                   labelText: 'Username',
+                  labelStyle: TextStyle(color: Colors.white),
                   hintText: 'Enter Username',
+                  hintStyle: TextStyle(color: Colors.white),
                 ),
               ),
             ),
+
+
             Container(
               padding: EdgeInsets.only(left: 30.0 ,right: 30.0, top: 20.0, bottom: 5.0),
-              child: TextField(
+              child: TextFormField(
+                style: TextStyle(color: Colors.white),
+                obscureText: !_showPassword,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.2)),
+                  ),
                   labelText: 'Password',
+                  labelStyle: TextStyle(color: Colors.white),
                   hintText: 'Enter Password',
+                  hintStyle: TextStyle(color: Colors.white),
+                  suffixIcon: GestureDetector(
+                    child: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
+                    onTap: (){
+                    },
+                  ),
                 ),
               ),
             ),
             Container(
               padding: EdgeInsets.only(left: 30.0 ,right: 30.0, top: 20.0, bottom: 5.0),
-              child: TextField(
+              child: TextFormField(
+                style: TextStyle(color: Colors.white),
+                obscureText: !_showPassword,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.5)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff95E1E9).withOpacity(0.2)),
+                  ),
                   labelText: 'Confirm Password',
+                  labelStyle: TextStyle(color: Colors.white),
                   hintText: 'Enter Password',
+                  hintStyle: TextStyle(color: Colors.white),
+                  suffixIcon: GestureDetector(
+                    child: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
+                    onTap: (){
+                    },
+                  ),
                 ),
               ),
             ),
-            Divider(
-              thickness: 1,
-              indent: 30,
-              endIndent: 30,
-              color: Colors.amber,
-            ),
 
-            Container( // SignUp Button
-              margin: EdgeInsets.only(top: 20),
+            Container(// LogIn Button
+              margin: EdgeInsets.only(top: 20.0, bottom: 5.0),
               height: 50,
-              width: 250,
+              width: 350,
               decoration: BoxDecoration(
-                  color: Colors.amber, borderRadius: BorderRadius.circular(10)
-              ),
+                  color: Color(0xff95E1E9).withOpacity(0.2), borderRadius: BorderRadius.circular(10)),
               child: TextButton(
-                child: Text('SIGN UP',
-                    style: TextStyle(color: Colors.white, fontSize: (25))),
-
-                onPressed: (){
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SignUpPage()),
-                  );
+                onPressed: () {
                 },
-
+                child: Text(
+                  'SIGN UP',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
               ),
             ),
 
@@ -84,7 +130,9 @@ class SignUpPage extends StatelessWidget {
           ],
         ),
       ),
+      ),
     );
+
   }
 }
 
