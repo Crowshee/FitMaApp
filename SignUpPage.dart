@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+class _SignUpPageState extends State<SignUpPage> {
 
-
-  bool _showPassword = false;
+  bool _showPassword= false;
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +81,12 @@ class SignUpPage extends StatelessWidget {
                   hintText: 'Enter Password',
                   hintStyle: TextStyle(color: Colors.white),
                   suffixIcon: GestureDetector(
-                    child: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
+                    child: Icon(_showPassword? Icons.visibility : Icons.visibility_off),
                     onTap: (){
+                      setState(() {
+                        _showPassword = !_showPassword;
+                      });
+
                     },
                   ),
                 ),
@@ -102,8 +109,11 @@ class SignUpPage extends StatelessWidget {
                   hintText: 'Enter Password',
                   hintStyle: TextStyle(color: Colors.white),
                   suffixIcon: GestureDetector(
-                    child: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
+                    child: Icon(_showPassword? Icons.visibility : Icons.visibility_off),
                     onTap: (){
+                      setState(() {
+                        _showPassword = !_showPassword;
+                      });
                     },
                   ),
                 ),
