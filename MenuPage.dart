@@ -20,11 +20,11 @@ class _MenuPageState extends State<MenuPage> {
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Color(0xff0D3728),Color(0xff3D5E52)])),
+              colors: [Color(0xff11b4bb), Color(0xffa7f5f8)])),
     ),
 
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xff3D5E52).withOpacity(0.6),
+        backgroundColor: Color(0xff11b4bb).withOpacity(0.6),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.accessibility),
